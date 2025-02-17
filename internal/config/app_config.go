@@ -17,6 +17,7 @@ type Config struct {
 	MediaDir          string
 }
 
+// TODO: most of this configurations could be user inputed parameters
 func LoadConfig() (*Config, error) {
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")

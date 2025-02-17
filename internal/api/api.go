@@ -11,6 +11,7 @@ import (
 )
 
 // TODO: Use exponential backoff for retryDelay.
+// TODO: should we add caching for the pages?
 // FetchPage retrieves house data for the specified page.
 // If the page fails to load after maxRetries, it logs the error and returns an empty PageResponse.
 func FetchPage(page int, maxRetries int, retryDelay time.Duration, baseURL string) (*models.PageResponse, error) {

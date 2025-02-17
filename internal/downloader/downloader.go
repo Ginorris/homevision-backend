@@ -12,6 +12,7 @@ import (
 	"github.com/Ginorris/homevision-backend/internal/utils"
 )
 
+// TODO implement retry logic for photo dowload in case of network error
 // DownloadPhoto downloads a single photo and saves it using the specified naming format.
 func DownloadPhoto(house models.House, mediaDir string) error {
 	// Ensure the media directory exists

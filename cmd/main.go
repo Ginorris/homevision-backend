@@ -1,3 +1,5 @@
+// TODO use containers to run the application
+// TODO automate test run with github actions
 package main
 
 import (
@@ -13,6 +15,7 @@ import (
 )
 
 func main() {
+	// TODO: add actual logging of hardware performance
 	start := time.Now()
 	// Load environment variables from .env file.
 	if err := godotenv.Load(); err != nil {
@@ -28,7 +31,6 @@ func main() {
 	fmt.Print(cfg)
 	
 	// TODO fecth pages concurrently to handle higher workloads
-	// TODO use pageCount as a parameter or amount of houses to fetch
 	// Fetch pages sequentially.
 	fetchStart := time.Now()
 	var houses []models.House
