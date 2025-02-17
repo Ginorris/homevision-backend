@@ -1,4 +1,7 @@
 {
-  "maxRetries": 3,
-  "retryDelaySeconds": 1
+  "maxRetries": 6,
+  "retryDelaySeconds": 0.5,
+  "pageCount": 10,
+  "concurrency": 10,
+  "mediaDir": "media"
 }

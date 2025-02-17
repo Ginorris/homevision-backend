@@ -12,6 +12,9 @@ type Config struct {
 	MaxRetries        int
 	RetryDelaySeconds int
 	RetryDelay        time.Duration
+	PageCount         int
+	Concurrency       int
+	MediaDir          string
 }
 
 func LoadConfig() (*Config, error) {
@@ -22,6 +25,9 @@ func LoadConfig() (*Config, error) {
 	// Set default values.
 	viper.SetDefault("maxRetries", 3)
 	viper.SetDefault("retryDelaySeconds", 1)
+	viper.SetDefault("pageCount", 10)
+	viper.SetDefault("concurrency", 10)
+	viper.SetDefault("mediaDir", "media")
 
 	// Read the config file.
 	if err := viper.ReadInConfig(); err != nil {
@@ -36,6 +42,9 @@ func LoadConfig() (*Config, error) {
 		APIURL:            viper.GetString("api.url"),
 		MaxRetries:        viper.GetInt("maxRetries"),
 		RetryDelaySeconds: viper.GetInt("retryDelaySeconds"),
+		PageCount:         viper.GetInt("pageCount"),
+		Concurrency:       viper.GetInt("concurrency"),
+		MediaDir:          viper.GetString("mediaDir"),
 	}
 	cfg.RetryDelay = time.Duration(cfg.RetryDelaySeconds) * time.Second
 
